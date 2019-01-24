@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-require('dotenv')
+require('dotenv/config')
 
 const path = require('path')
 const router = express.Router()
@@ -17,9 +17,10 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:catjective', async (req, res) => {
-	let cats = await fetch(urlHead + req.param.catjective + '+cat' + urlTail)
-	let jsonCats = await cats.json()
-	res.json(jsonCats)
+	let r = await fetch(urlHead + req.param.catjective + '+cat' + urlTail)
+	let jsonCats = await r.json()
+	let cats = jsonCats.data.map(c=> c.images.fixed_height.url)
+	res.json({'cats':cats})
 }) 
 
 app.use('/', router)
