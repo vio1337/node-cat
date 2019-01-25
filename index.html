@@ -2,8 +2,24 @@
 <html>
 <head>
 	<title>wasssup cats</title>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
 </head>
 <body>
-
+	<form>
+		<input type="text" class="searchQuery" placeholder="insert a cat-jective">
+		<input type="submit" class='submitBtn' value='search'>
+	</form>
 </body>
+<script type="text/javascript">
+	const input = document.querySelector('.searchQuery')
+	const submit = document.querySelector('.submitBtn')
+	
+	submit.addEventListener('click', async (event)=> {
+		event.preventDefault()
+		let r = await fetch(`/${input.value}`)
+		let cats = await r.json()
+		console.log(cats)
+	})
+	
+</script>
 </html>

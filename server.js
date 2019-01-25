@@ -20,7 +20,7 @@ router.get('/:catjective', async (req, res) => {
 	let r = await fetch(urlHead + req.param.catjective + '+cat' + urlTail)
 	let jsonCats = await r.json()
 	let cats = jsonCats.data.map(c=> c.images.fixed_height.url)
-	res.json({'cats':cats})
+	res.json(cats)
 }) 
 
 app.use('/', router)
