@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>catjective witchcraft</title>
+		<script type='text/javascript' src='/public/index.js'></script>
+	</head>
+	<body 
+		style='
+			display: flex; 
+			flex-flow: column wrap; 
+			align-items: center; 
+			padding: 60px; 
+			height: 100vh;
+		'>
+		<div 
+			style='
+				display: flex; 
+				flex-flow: column nowrap; 
+				align-items: center;
+			'>
+			<img 
+				src='./public/witch-cat.png' 
+				alt='catjective-logo'
+				height='100px'
+				width='auto' 
+			/>
+			<h1
+				style='
+					letter-spacing: 10px;
+				'>
+				catjective
+			</h1>
+			<form 
+				style='
+					display: flex; 
+					flex-flow: row nowrap;
+					padding: 10px;
+				'>
+				<input
+					class='searchQuery' 
+					type='text' 
+					placeholder='what kind of cat are you looking for?'
+					style='height: 40px; width: 240px; outline: none; border: none; border-bottom: 1px solid black;'
+				/>
+				<input 
+					class='submitBtn'
+					type='submit' 
+					value='meow'
+					style='background-color: black; color: white; border: none; padding: 0px 30px;'
+				/>
+			</form>
+			<div class='error'>
+			</div>
+		</div>
+		<div id='catainer'
+			style='
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: center;
+				overflow: auto;
+				height: 600px;
+				padding: 20px;
+			' >
+		</div>
+	</body>
+</html>
